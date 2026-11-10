@@ -25,9 +25,10 @@ def create_app():
         response.headers["X-Served-By"] = INSTANCE_ID
         return response
 
-    @app.get("/healthz")
+    @app.get("/api/v1/healthz")
     def healthz():
-        # No database call: used by Cloud Run to check the process is alive.
+        # No database call: checks the process is alive. Under /api/v1 because
+        # Cloud Run's frontend reserves the bare /healthz path (it never reaches us).
         return jsonify(status="ok")
 
     @app.get("/api/v1/whoami")
