@@ -1,0 +1,3 @@
+# Keep shell scripts and hooks on LF line endings so they run on every OS.
+*.sh text eol=lf
+.githooks/* text eol=lf

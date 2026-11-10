@@ -1,0 +1,36 @@
+# Secrets: never commit these
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.crt
+*.p12
+service-account*.json
+*-credentials.json
+secrets/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.coverage
+htmlcov/
+*.egg-info/
+
+# Local data and tooling
+*.sqlite
+*.sqlite3
+*.db
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Load-test and video working files (keep results in docs/ if needed)
+*.mp4
+*.mov
+*.mkv
+locust_*.html
