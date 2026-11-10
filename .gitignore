@@ -29,6 +29,12 @@ htmlcov/
 .DS_Store
 Thumbs.db
 
+# Claude Code files (kept locally, not tracked)
+.claude/
+.claude-flow/
+CLAUDE.md
+docs/CLAUDE_PROMPTS.md
+
 # Load-test and video working files (keep results in docs/ if needed)
 *.mp4
 *.mov
