@@ -7,6 +7,7 @@ Fill this in before any database code. It drives the schema, the auth code and t
 | Role | Login? | Tables and actions allowed |
 |---|---|---|
 | `planb_migrator` | No | Owns tables; migrations only |
+| `planb_auth` | Yes | SELECT and INSERT on `users`; SELECT on `event_members`; nothing else (used for login and role lookup) |
 | `planb_viewer` | Yes | |
 | `planb_editor` | Yes | |
 | `planb_lead` | Yes | |
@@ -19,7 +20,9 @@ For each table: which policy, which role it applies to, and the membership condi
 
 ## 3. Schema
 
-Tables, keys, foreign keys, indexes. Include `users`, `events`, `event_members` (role per event), `activities`, `fallback_cards`, `plans`, `plan_items`, `weather_snapshots`, `comparisons`, `decision_log`.
+Tables, keys, foreign keys, indexes. Include `users`, `events`, `event_members` (role per event), `activities` (the fallback is stored in `fallback_title` and `fallback_duration_minutes` columns, no separate table), `plans`, `plan_items`, `weather_snapshots`, `comparisons`, `decision_log`. Column names must match `docs/API_SPEC.md`.
+
+Settle these before coding (see `docs/PHASES.md` task P0-S1): how an event gets its first organiser; who reads `users` at login; how the lead rule works; how foreign keys stop cross-event references.
 
 ## 4. Connection handling
 

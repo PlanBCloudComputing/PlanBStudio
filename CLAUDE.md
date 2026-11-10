@@ -1,6 +1,6 @@
 # CLAUDE.md — rules for Claude Code in this repository
 
-This is the ECS781P (Cloud Computing, QMUL) mini-project "Plan B Studio". Team: Alvi Hossain, Katie, Steven. Read `PLAN.md` for the phase plan, database design and who owns what.
+This is the ECS781P (Cloud Computing, QMUL) mini-project "Plan B Studio". Team: Alvi Hossain, Katie, Steven. Read `PLAN.md` for the phase plan, database design and who owns what; `docs/PHASES.md` for task IDs and exact steps; and `docs/API_SPEC.md` for the API contract that all code must match. Ready-made session prompts are in `docs/CLAUDE_PROMPTS.md`.
 
 ## Git rules (must follow, no exceptions)
 

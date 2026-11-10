@@ -23,6 +23,17 @@ The organiser commits one plan. The commit is saved, with the forecast snapshot,
 
 **Stack:** Python and Flask, gunicorn, Docker, Google Cloud Run, Cloud SQL (PostgreSQL), Open-Meteo.
 
+### Detailed guides (read these for the exact steps)
+
+| File | What it gives you |
+|---|---|
+| [`docs/PHASES.md`](docs/PHASES.md) | Every task with an ID, how to do it, estimated hours, and the gate checklist for each phase. Includes commands, repo layout and troubleshooting. |
+| [`docs/API_SPEC.md`](docs/API_SPEC.md) | The API contract: every endpoint, role rule, status code, and the Python interfaces the three of you share. |
+| [`docs/SCALING_PLAYBOOK.md`](docs/SCALING_PLAYBOOK.md) | Exactly how to run and evidence the 10-mark scaling experiment. |
+| [`docs/VIDEO_SCRIPT.md`](docs/VIDEO_SCRIPT.md) | Recording checklist and a scene-by-scene script mapped to every mark. |
+| [`docs/CLAUDE_PROMPTS.md`](docs/CLAUDE_PROMPTS.md) | Copy-and-paste Claude Code prompts for each person, review and debugging. |
+| [`docs/ROLE_DESIGN.md`](docs/ROLE_DESIGN.md), [`docs/STRESS_TEST.md`](docs/STRESS_TEST.md) | Design pages Steven and Katie complete in Phase 0. |
+
 ---
 
 ## 2. Lecturer's answers (Sukhpal)
@@ -87,6 +98,7 @@ Login roles are **capability tiers, not people**. Users and per-event membership
 | Role | Login? | What the database allows |
 |---|---|---|
 | `planb_migrator` | No | Owns the tables, runs migrations. The app never connects as it. |
+| `planb_auth` | Yes | Login and role lookup only: SELECT and INSERT on `users`, SELECT on `event_members`. Nothing else. |
 | `planb_viewer` | Yes | SELECT only |
 | `planb_editor` | Yes | SELECT, plus INSERT/UPDATE/DELETE on activities, plans and plan items |
 | `planb_lead` | Yes | SELECT, plus UPDATE on activities, limited to allowed columns |
@@ -104,6 +116,8 @@ Login roles are **capability tiers, not people**. Users and per-event membership
 ## 6. Phase plan
 
 Dates are 2026. Each phase ends with a **gate**. If a gate fails, cut scope immediately rather than carrying the problem forward.
+
+> This section is the summary. The step-by-step version, with task IDs, commands and "done when" checks, is in [`docs/PHASES.md`](docs/PHASES.md).
 
 ### Phase 0: Foundations (Tue 10 Nov to Fri 13 Nov)
 

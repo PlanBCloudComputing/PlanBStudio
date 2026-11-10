@@ -15,7 +15,12 @@ Python, Flask, gunicorn, Docker, Google Cloud Run, Cloud SQL (PostgreSQL), Open-
 
 | Path | Purpose |
 |---|---|
-| `PLAN.md` | Phase-by-phase plan, ownership, database design, video script, risks |
+| `PLAN.md` | Phase-by-phase plan overview, ownership, database design, risks |
+| `docs/PHASES.md` | Detailed task list with IDs, commands, gates and troubleshooting |
+| `docs/API_SPEC.md` | API contract: endpoints, roles, status codes, shared Python interfaces |
+| `docs/SCALING_PLAYBOOK.md` | How to run and evidence the scaling experiment |
+| `docs/VIDEO_SCRIPT.md` | Recording checklist and scene-by-scene script |
+| `docs/CLAUDE_PROMPTS.md` | Claude Code prompts for each team member |
 | `CLAUDE.md` | Rules for Claude Code sessions, including git commit attribution |
 | `docs/ROLE_DESIGN.md` | Database login roles, GRANTs, row-level security and schema (Steven) |
 | `docs/STRESS_TEST.md` | Forecast stress-test method and assumptions (Katie) |
